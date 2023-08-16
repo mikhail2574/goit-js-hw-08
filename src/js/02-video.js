@@ -14,10 +14,8 @@ player.on(
   }, 1000)
 );
 
-player.setCurrentTime(
-  JSON.parse(localStorage.getItem('videoplayer-current-time'))
-);
-
-// player.on('timeupdate', function (data) {
-//   localStorage.setItem('videoplayer-current-time', seconds);
-// });
+if (localStorage.getItem('videoplayer-current-time')) {
+  player.setCurrentTime(
+    JSON.parse(localStorage.getItem('videoplayer-current-time'))
+  );
+}
